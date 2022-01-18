@@ -34,6 +34,8 @@ if __name__ == '__main__':
             rate.sleep()
             counter += 1
 
+            rospy.loginfo("hi")
+
     except (rospy.ROSInterruptException, KeyboardInterrupt):
         rospy.signal_shutdown("Process ended")
         sys.exit()
