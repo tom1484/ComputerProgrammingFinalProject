@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 import rospy
 
-from imu_publisher import ImuPublisher
-from camera_info_publisher import CameraInfoPublisher
-from image_publisher import ImagePublisher
+from util.imu_publisher import ImuPublisher
+from util.camera_info_publisher import CameraInfoPublisher
+from util.image_publisher import ImagePublisher
 
 from threading import Thread
 import sys
@@ -31,10 +31,8 @@ if __name__ == '__main__':
             if counter % 200 == 0:
                 camera_pub.publish(stamp)
 
-            rate.sleep()
             counter += 1
-
-            rospy.loginfo("hi")
+            rate.sleep()
 
     except (rospy.ROSInterruptException, KeyboardInterrupt):
         rospy.signal_shutdown("Process ended")

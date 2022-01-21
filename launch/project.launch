@@ -1,0 +1,5 @@
+<launch>
+    <node name="clock" pkg="project" type="clock.py" />
+    <node name="publish" pkg="project" type="publish.py" />
+    <node name="mesh_analysis" pkg="project" type="mesh_analysis.py" />
+</launch>
