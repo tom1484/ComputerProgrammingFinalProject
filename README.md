@@ -8,9 +8,32 @@ Since there are some bugs of **Kimera**, it can not publish 3D-mesh in mono-came
 
 * **Test with local hardware inputs**
 
-  ``` bash
+  ``` shell
   # The following commands have to be executed in different terminal.
-  roslaunch project project.launch
   
+  # start publshers of hardware data and simulation clock
+  roslaunch project publish.launch
+  # start Kimera-VIO in mono-camera mode
+  roslaunch roslaunch kimera_vio_ros kimera_vio_ros_eurocmono.launch
+  # visualizing Kimera output
+  rviz -d ~/catkin_ws/src/Kimera-VIO-ROS/rviz/kimera_vio_euroc.rviz
   ```
 
+  H
+
+* **Test with official dataset**
+
+  ```shell
+  # The following commands have to be executed in different terminal.
+  
+  # start publshers of hardware data and simulation clock
+  roslaunch project publish.launch
+  # start analyzing of mesh
+  rosrun project mesh_analysis.py
+  # start Kimera-VIO in mono-camera mode
+  roslaunch roslaunch kimera_vio_ros kimera_vio_ros_euroc.launch online:=true
+  # visualizing Kimera output
+  rviz -d ~/catkin_ws/src/Kimera-VIO-ROS/rviz/kimera_vio_euroc.rviz
+  ```
+
+  H
