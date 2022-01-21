@@ -9,6 +9,8 @@ Since there are some bugs of **Kimera**, it can not publish 3D-mesh in mono-came
 * **Test with local hardware inputs**
 
   ``` bash
+  # The following commands have to be executed in different terminal.
   roslaunch project project.launch
+  
   ```
 
