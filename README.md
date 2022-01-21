@@ -2,7 +2,7 @@
 
 ## main_project
 
-**requirements: ** **Testing should be done on RPi**.
+**requirements:  Testing should be done on RPi**.
 
 All files under this folder are located in  `~/catkin_ws/src/project ` .
 
@@ -55,7 +55,7 @@ This folder contains codes for calibrating camera and MPU6050.
 
 ### camera_calibration
 
-**requirements: ** Install `requirements.txt` 
+**requirements:**  Install `requirements.txt` 
 
 Run one of the following
 
@@ -66,7 +66,7 @@ python3 calibration.py
 
 ### MPU6050_calibration
 
-**requirements: ** Install `MPU6050` in `Library Manager` 
+**requirements:**  Install `MPU6050` in `Library Manager` 
 
 Connect `SDA`, `SCL` on Arduino, upload sketch, open `Serial Monitor`, and set baud rate to 38400.
 
