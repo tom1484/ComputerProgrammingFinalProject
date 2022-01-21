@@ -26,8 +26,7 @@ for fname in images:
         imgpoints.append(corners)
 
 ret, mtx, dist, rvecs, tvecs = cv.calibrateCamera(objpoints, imgpoints, gray.shape[::-1], None, None)
-print("ret: ")
-print(ret)
+
 print('\n')
 print("mtx: ")
 print(mtx)
