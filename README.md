@@ -2,6 +2,8 @@
 
 ## main_project
 
+**This folder is view only, all testing should be done on RPi**
+
 All files under this folder are located in  `~/catkin_ws/src/project ` .
 
 Since there are some bugs of **Kimera**, it can not publish 3D-mesh in mono-camera mode, Therefore, there are options options to test the project: 
@@ -40,10 +42,22 @@ Since there are some bugs of **Kimera**, it can not publish 3D-mesh in mono-came
 
 To see the data published, you can run `rostopic echo <topic>` .  The corresponding topic of different type of data are:
 
-| Topic                  | Content                                           |
-| :--------------------- | ------------------------------------------------- |
-| `/imu0`                | accelerometer and gyro                            |
-| `/cam0/image_raw`      | image from left camera                            |
-| `/cam1/image_raw`      | image from right camera (only in stereo mode)     |
-| `/kimera_vio_ros/mesh` | 3D mesh from **Kimera-VIO** (only in stereo mode) |
+| Topic                  | Content                                       |
+| :--------------------- | --------------------------------------------- |
+| `/imu0`                | accelerometer and gyro                        |
+| `/cam0/image_raw`      | image from left camera                        |
+| `/cam1/image_raw`      | image from right camera (only in stereo mode) |
+| `/kimera_vio_ros/mesh` | 3D mesh from **Kimera** (only in stereo mode) |
+
+## calibration
+
+This folder contains files for calibrating camera and MPU6050.
+
+### camera_calibration
+
+Run `python `
+
+It requires multiple pictures of chess grid taken from different angles, so 
+
+### MPU6050_calibration
 
