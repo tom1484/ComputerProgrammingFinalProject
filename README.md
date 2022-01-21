@@ -4,7 +4,7 @@
 
 All files under this folder are located in  `~/catkin_ws/src/project ` .
 
-Since there are some bugs of **Kimera**, it can not publish 3D-mesh in mono-camera mode, Therefore, there are several options to test the project: 
+Since there are some bugs of **Kimera**, it can not publish 3D-mesh in mono-camera mode, Therefore, there are options options to test the project: 
 
 * **Test with local hardware inputs**
 
@@ -13,27 +13,37 @@ Since there are some bugs of **Kimera**, it can not publish 3D-mesh in mono-came
   
   # start publshers of hardware data and simulation clock
   roslaunch project publish.launch
-  # start Kimera-VIO in mono-camera mode
+  
+  # start Kimera-VIO in mono mode
   roslaunch roslaunch kimera_vio_ros kimera_vio_ros_eurocmono.launch
+  
   # visualizing Kimera output
   rviz -d ~/catkin_ws/src/Kimera-VIO-ROS/rviz/kimera_vio_euroc.rviz
   ```
-
-  H
 
 * **Test with official dataset**
 
   ```shell
   # The following commands have to be executed in different terminal.
   
-  # start publshers of hardware data and simulation clock
-  roslaunch project publish.launch
+  # start playing dataset
+  rosbag play --clock ~/catkin_ws/data/V1_01_easy.bag
+  # start Kimera-VIO in stereo mode
+  roslaunch roslaunch kimera_vio_ros kimera_vio_ros_euroc.launch online:=true
+  
   # start analyzing of mesh
   rosrun project mesh_analysis.py
-  # start Kimera-VIO in mono-camera mode
-  roslaunch roslaunch kimera_vio_ros kimera_vio_ros_euroc.launch online:=true
+  
   # visualizing Kimera output
   rviz -d ~/catkin_ws/src/Kimera-VIO-ROS/rviz/kimera_vio_euroc.rviz
   ```
 
-  H
+To see the data published, you can run `rostopic echo <topic>` .  The corresponding topic of different type of data are:
+
+| Topic                  | Content                                           |
+| :--------------------- | ------------------------------------------------- |
+| `/imu0`                | accelerometer and gyro                            |
+| `/cam0/image_raw`      | image from left camera                            |
+| `/cam1/image_raw`      | image from right camera (only in stereo mode)     |
+| `/kimera_vio_ros/mesh` | 3D mesh from **Kimera-VIO** (only in stereo mode) |
+
