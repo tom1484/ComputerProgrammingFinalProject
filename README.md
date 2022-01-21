@@ -1,5 +1,7 @@
 # Team9_code
 
+[GitHub repo](https://github.com/tom1484/ComputerProgrammingFinalProject)
+
 ## main_project
 
 **requirements:  Testing should be done on RPi**.
