@@ -19,7 +19,7 @@ Since there are some bugs of **Kimera**, it can not publish 3D-mesh in mono-came
   roslaunch project publish.launch
   
   # start Kimera-VIO in mono mode
-  roslaunch roslaunch kimera_vio_ros kimera_vio_ros_eurocmono.launch
+  roslaunch kimera_vio_ros kimera_vio_ros_eurocmono.launch
   
   # visualizing Kimera output
   rviz -d ~/catkin_ws/src/Kimera-VIO-ROS/rviz/kimera_vio_euroc.rviz
@@ -30,10 +30,10 @@ Since there are some bugs of **Kimera**, it can not publish 3D-mesh in mono-came
   ```shell
   # The following commands have to be executed in different terminal.
   
+  # start Kimera-VIO in stereo mode
+  roslaunch kimera_vio_ros kimera_vio_ros_euroc.launch online:=true
   # start playing dataset
   rosbag play --clock ~/catkin_ws/data/V1_01_easy.bag
-  # start Kimera-VIO in stereo mode
-  roslaunch roslaunch kimera_vio_ros kimera_vio_ros_euroc.launch online:=true
   
   # start analyzing of mesh
   rosrun project mesh_analysis.py
